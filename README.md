@@ -1,4 +1,4 @@
-# Installation note for seting-up Tensorflow
+# Installation notes for seting-up Tensorflow
 
 ## Install Python
 Python is automatically installed on Ubuntu. Take a moment to confirm (by issuing a python -V command) that one of the following Python versions is already installed on your system:
