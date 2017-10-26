@@ -40,7 +40,7 @@ Once installed, you can upgrade to a newer version of Bazel with:
 sudo apt-get upgrade bazel
 ```
 
-### Install GPU support for TensorFlow
+## Install GPU support for TensorFlow
 If you are building TensorFlow without GPU support, skip this section.
 
 The following NVIDIA hardware must be installed on your system:
