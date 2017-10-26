@@ -1,4 +1,4 @@
-# Installation note for set-up Tensorflow
+# Installation note for seting-up Tensorflow
 ## Install Bazel
 * Install JDK 8
 Install JDK 8 by using:
