@@ -157,7 +157,7 @@ def drl_test3():
 
 
     # Set-up the Atari environment
-    env = gym.make("MsPacman-v9")
+    env = gym.make("MsPacman-v0")
 
     # Parameters
     input_height = 88
