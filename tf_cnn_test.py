@@ -91,6 +91,12 @@ def cnn_test2():
     n_epochs = 10
     batch_size = 100
 
+    # Sample 1000 images for testing
+    X_test = mnist.test.images
+    indices = np.random.permutation(len(X_test))[:1000]
+    X_test = X_test[indices]
+    y_test = mnist.test.labels[indices]
+
     with tf.Session() as sess:
         init.run()
         for epoch in range(n_epochs):
@@ -98,10 +104,11 @@ def cnn_test2():
                 X_batch, y_batch = mnist.train.next_batch(batch_size)
                 sess.run(training_op, feed_dict={X: X_batch, y: y_batch})
             acc_train = accuracy.eval(feed_dict={X: X_batch, y: y_batch})
-            acc_test = accuracy.eval(feed_dict={X: mnist.test.images, y: mnist.test.labels})
+
+            acc_test = accuracy.eval(feed_dict={X: X_test, y: y_test})
             print(epoch, "Train accuracy:", acc_train, "Test accuracy:", acc_test)
 
-            save_path = saver.save(sess, "./my_mnist_model")
+            save_path = saver.save(sess, "model/my_mnist_model")
 
 
 def main():
