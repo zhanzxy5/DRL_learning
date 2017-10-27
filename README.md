@@ -20,7 +20,7 @@ Install JDK 8 by using:
 On Ubuntu 14.04 LTS you'll have to use a PPA:
 
 ```
-sudo add-apt-repository ppa:webupd8team/java'
+sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update && sudo apt-get install oracle-java8-installer
 ```
 
