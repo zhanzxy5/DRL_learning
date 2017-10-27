@@ -140,20 +140,21 @@ def drl_test2():
 
 
 # Deep Q-learning with Atari Ms. Pac-Man game
-# Preprocessing the image
-mspacman_color = np.array([210, 164, 74]).mean()
-
-def preprocess_observation(obs):
-    img = obs[1:176:2, ::2]
-    img = img.mean(axis=2)
-    img[img == mspacman_color] = 0  # improve the contrast
-    img = (img - 128) / 128 - 1  # from -1 to 1
-    return img.reshape(88, 80, 1)
-
 def drl_test3():
     from tensorflow.contrib.layers import convolution2d, fully_connected
     from collections import deque
     import os
+
+    # Preprocessing the image
+    mspacman_color = np.array([210, 164, 74]).mean()
+
+    def preprocess_observation(obs):
+        img = obs[1:176:2, ::2]
+        img = img.mean(axis=2)
+        img[img == mspacman_color] = 0  # improve the contrast
+        img = (img - 128) / 128 - 1  # from -1 to 1
+        return img.reshape(88, 80, 1)
+
 
     # Set-up the Atari environment
     env = gym.make("MsPacman-v9")
