@@ -297,7 +297,7 @@ def drl_test3():
                 state = preprocess_observation(obs)
 
             # Online step
-            q_value = online_q_values.eval(feed_dict={X_state: state})
+            q_value = online_q_values.eval(feed_dict={X_state: [state]})
             action = epsilon_greedy(q_value, step)
 
             # Play
