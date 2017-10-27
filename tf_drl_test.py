@@ -246,7 +246,7 @@ def drl_test3():
     # Set-up epsilon-greedy policy: gradually reduce from 1 to 0.05 in 50,000 training steps
     eps_min = 0.05
     eps_max = 1.0
-    eps_decay_step = 50000
+    eps_decay_step = 100000
 
     def epsilon_greedy(q_values, step):
         epsilon = max(eps_min, eps_max - (eps_max - eps_min) * step / eps_decay_step)
@@ -257,16 +257,16 @@ def drl_test3():
 
     # Training section
     # Parameters
-    n_steps = 100000        # N training steps
-    training_start = 100    # start training after 1000 game iterations
-    training_interval = 3   # run training step every 3 game iterations
-    save_steps = 100        # save every some steps
-    copy_steps = 25         # copy target to online network period
+    n_steps = 1000000        # N training steps
+    training_start = 1000    # start training after 1000 game iterations
+    training_interval = 4   # run training step every 4 game iterations
+    save_steps = 1000        # save every some steps
+    copy_steps = 1000         # copy target to online network period
     discount_rate = 0.95
     skip_start = 90         # skip the start of every game
     batch_size = 50
     iteration = 0           # game iteration
-    checkpoint_path = "data/DQN"
+    checkpoint_path = "model/DQN"
     done = True             # env needs to be reset
 
     # Parameters to track the game performance
